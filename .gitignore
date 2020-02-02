@@ -1,2 +1,5 @@
 node_modules/
 
+src/appsscript.json
+.clasp.json
+src/Code.js
