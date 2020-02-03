@@ -7,7 +7,10 @@ function callSetDND(token: string, hours: number) {
     'method' : 'post',
     'headers' : headers,
     'followRedirects' : false,
-    'body': `token=${token}&num_minutes=${60 * hours}`
+    'payload': {
+      'token': token,
+      'num_minutes': 60 * hours
+    }
   };
   const response = UrlFetchApp.fetch(url, options).getContentText("UTF-8");
   console.log(response);
