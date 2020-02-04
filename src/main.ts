@@ -9,9 +9,10 @@ function main() {
 
   const dndHours = parseInt(props.getProperty('DND_HOURS'));
   const lastRow = sheet.getLastRow();
-  const values = sheet.getSheetValues(1, 1, lastRow, 1);
+  const values = sheet.getSheetValues(1, 1, lastRow, 2);
   for (let i in values) {
     const oauthToken = values[i][0];
-    callSetDND(oauthToken, dndHours);
+    const slackTeam = values[i][1];
+    callSetDND(oauthToken, dndHours, slackTeam);
   }
 }
